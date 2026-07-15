@@ -18,6 +18,7 @@ from urllib.parse import unquote
 
 ALLOWED_STATUSES = ("Pendiente", "Mínimo", "Defendible", "Revisado")
 CLASS_IDENTIFIERS = tuple(str(number) for number in range(1, 17))
+IA_CLASS_IDENTIFIERS = tuple(str(number) for number in range(1, 15))
 UNIT_IDENTIFIERS = tuple(f"UT{number}" for number in range(1, 6))
 CASE_IDENTIFIERS = ("CASO1", "CASO2")
 ESSENTIAL_FILES = (
@@ -30,10 +31,14 @@ ESSENTIAL_FILES = (
     "docs/portfolio/plantilla.md",
 )
 REQUIRED_SECTIONS = {
-    "objetivo": ("## Objetivo",),
+    "objetivo y pregunta": ("## Objetivo", "## Pregunta"),
+    "configuración": ("## Configuración",),
+    "run o traza": ("## Run o traza", "## Run o trace"),
+    "resultado y comparación": ("## Resultado y comparación", "## Resultado probado"),
     "evidencia": ("## Evidencia",),
     "reproducibilidad": ("## Reproducibilidad",),
-    "decisiones y límites": ("## Decisiones y límites", "## Decisión técnica", "## Decisiones"),
+    "decisión y límite": ("## Decisión y límite", "## Decisiones y límites", "## Decisión técnica", "## Decisiones"),
+    "siguiente experimento": ("## Siguiente experimento",),
     "uso de IA": ("## Uso de IA",),
     "microdefensa": ("## Microdefensa",),
 }
@@ -114,7 +119,7 @@ def _frontmatter_list(frontmatter: str, key: str) -> tuple[str, ...]:
 
 
 def _progress_contract(text: str) -> tuple[tuple[str, ...], str, list[Issue]]:
-    """Resolve class, unit or two-case progress maps."""
+    """Resolve class, unit, two-case or combined progress maps."""
     frontmatter = _frontmatter(text)
     raw_mode = _frontmatter_scalar(frontmatter, "progress_mode")
     mode = (raw_mode or "classes").casefold()
@@ -130,6 +135,28 @@ def _progress_contract(text: str) -> tuple[tuple[str, ...], str, list[Issue]]:
         elif declared != CASE_IDENTIFIERS:
             issues.append(Issue("error", "expected_cases debe declarar exactamente: CASO1, CASO2"))
         return CASE_IDENTIFIERS, "casos", issues
+    if mode == "classes_and_cases":
+        declared_classes = tuple(_frontmatter_list(frontmatter, "expected_classes"))
+        declared_cases = tuple(
+            value.upper().replace(" ", "")
+            for value in _frontmatter_list(frontmatter, "expected_cases")
+        )
+        issues: list[Issue] = []
+        if declared_classes != IA_CLASS_IDENTIFIERS:
+            issues.append(
+                Issue(
+                    "error",
+                    "progress_mode: classes_and_cases requiere expected_classes exactamente del 1 al 14",
+                )
+            )
+        if declared_cases != CASE_IDENTIFIERS:
+            issues.append(
+                Issue(
+                    "error",
+                    "progress_mode: classes_and_cases requiere expected_cases: [CASO1, CASO2]",
+                )
+            )
+        return IA_CLASS_IDENTIFIERS + CASE_IDENTIFIERS, "clases y casos", issues
     if mode != "units":
         return CLASS_IDENTIFIERS, "clases", [Issue("error", f"progress_mode inválido: {raw_mode!r}")]
 
@@ -158,6 +185,9 @@ def parse_progress_map(path: Path) -> tuple[list[ProgressRow], list[Issue]]:
     issues.extend(contract_issues)
     unit_mode = expected == UNIT_IDENTIFIERS
     case_mode = expected == CASE_IDENTIFIERS
+    combined_mode = any(identifier.startswith("CASO") for identifier in expected) and any(
+        identifier.isdigit() for identifier in expected
+    )
     for line_number, line in enumerate(text.splitlines(), start=1):
         if not line.lstrip().startswith("|"):
             continue
@@ -173,6 +203,13 @@ def parse_progress_map(path: Path) -> tuple[list[ProgressRow], list[Issue]]:
             if not re.fullmatch(r"(?i)CASO\s*\d+", raw_identifier):
                 continue
             identifier = raw_identifier.upper().replace(" ", "")
+        elif combined_mode:
+            if raw_identifier.isdigit():
+                identifier = str(int(raw_identifier))
+            elif re.fullmatch(r"(?i)CASO\s*\d+", raw_identifier):
+                identifier = raw_identifier.upper().replace(" ", "")
+            else:
+                continue
         else:
             if not raw_identifier.isdigit():
                 continue
@@ -190,6 +227,14 @@ def parse_progress_map(path: Path) -> tuple[list[ProgressRow], list[Issue]]:
     duplicates = [identifier for identifier in expected if sum(row.identifier == identifier for row in rows) > 1]
     if duplicates:
         issues.append(Issue("error", f"El mapa repite las {label}: {', '.join(duplicates)}"))
+    unexpected = sorted(found.difference(expected), key=lambda value: (not value.isdigit(), value))
+    if unexpected:
+        issues.append(
+            Issue(
+                "error",
+                f"El mapa contiene identificadores no permitidos para {label}: {', '.join(unexpected)}",
+            )
+        )
     return rows, issues
 
 

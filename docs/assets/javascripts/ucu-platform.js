@@ -79,11 +79,11 @@
 
   function enhanceProgress() {
     const dashboard = document.querySelector("[data-ucu-progress-dashboard]");
-    const table = document.querySelector("[data-ucu-progress-source] table");
-    if (!dashboard || !table || dashboard.dataset.enhanced === "true") return;
+    const tables = Array.from(document.querySelectorAll("[data-ucu-progress-source] table"));
+    if (!dashboard || tables.length === 0 || dashboard.dataset.enhanced === "true") return;
 
     const counts = Object.fromEntries(statuses.map((status) => [status, 0]));
-    const rows = Array.from(table.querySelectorAll("tbody tr"));
+    const rows = tables.flatMap((table) => Array.from(table.querySelectorAll("tbody tr")));
     rows.forEach((row) => {
       const cell = row.lastElementChild;
       if (!cell) return;
