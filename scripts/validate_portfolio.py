@@ -118,7 +118,7 @@ def _frontmatter_list(frontmatter: str, key: str) -> tuple[str, ...]:
 
 
 def _progress_contract(text: str) -> tuple[tuple[str, ...], str, list[Issue]]:
-    """Resolve class, unit or two-case progress maps."""
+    """Resolve class, unit, two-case or combined progress maps."""
     frontmatter = _frontmatter(text)
     raw_mode = _frontmatter_scalar(frontmatter, "progress_mode")
     mode = (raw_mode or "classes").casefold()
@@ -134,6 +134,29 @@ def _progress_contract(text: str) -> tuple[tuple[str, ...], str, list[Issue]]:
         elif declared != CASE_IDENTIFIERS:
             issues.append(Issue("error", "expected_cases debe declarar exactamente: CASO1, CASO2"))
         return CASE_IDENTIFIERS, "casos", issues
+    if mode == "classes_and_cases":
+        declared_classes = tuple(_frontmatter_list(frontmatter, "expected_classes"))
+        declared_cases = tuple(
+            value.upper().replace(" ", "")
+            for value in _frontmatter_list(frontmatter, "expected_cases")
+        )
+        issues: list[Issue] = []
+        sequential_classes = tuple(str(number) for number in range(1, len(declared_classes) + 1))
+        if not declared_classes or declared_classes != sequential_classes:
+            issues.append(
+                Issue(
+                    "error",
+                    "progress_mode: classes_and_cases requiere expected_classes consecutivas desde 1",
+                )
+            )
+        if declared_cases != CASE_IDENTIFIERS:
+            issues.append(
+                Issue(
+                    "error",
+                    "progress_mode: classes_and_cases requiere expected_cases: [CASO1, CASO2]",
+                )
+            )
+        return declared_classes + CASE_IDENTIFIERS, "clases y casos", issues
     if mode != "units":
         return CLASS_IDENTIFIERS, "clases", [Issue("error", f"progress_mode inválido: {raw_mode!r}")]
 
@@ -162,6 +185,9 @@ def parse_progress_map(path: Path) -> tuple[list[ProgressRow], list[Issue]]:
     issues.extend(contract_issues)
     unit_mode = expected == UNIT_IDENTIFIERS
     case_mode = expected == CASE_IDENTIFIERS
+    combined_mode = any(identifier.startswith("CASO") for identifier in expected) and any(
+        identifier.isdigit() for identifier in expected
+    )
     for line_number, line in enumerate(text.splitlines(), start=1):
         if not line.lstrip().startswith("|"):
             continue
@@ -177,6 +203,13 @@ def parse_progress_map(path: Path) -> tuple[list[ProgressRow], list[Issue]]:
             if not re.fullmatch(r"(?i)CASO\s*\d+", raw_identifier):
                 continue
             identifier = raw_identifier.upper().replace(" ", "")
+        elif combined_mode:
+            if raw_identifier.isdigit():
+                identifier = str(int(raw_identifier))
+            elif re.fullmatch(r"(?i)CASO\s*\d+", raw_identifier):
+                identifier = raw_identifier.upper().replace(" ", "")
+            else:
+                continue
         else:
             if not raw_identifier.isdigit():
                 continue

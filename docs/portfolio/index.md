@@ -24,7 +24,7 @@ Creá los archivos cuando comience cada caso. Mientras no exista un resultado pr
 
 ## Puntos de entrada
 
-- [Mapa de casos](mapa-evidencias.md): estado versionado de Caso 1 y Caso 2 y reglas de defensa.
+- [Mapa de evidencias](mapa-evidencias.md): progreso versionado de las 14 clases, Caso 1 y Caso 2, con reglas de defensa.
 - [Primera entrada](01-primera-entrada.md): evidencia de que el repositorio y el flujo de publicación funcionan.
 - [Plantilla](plantilla.md): contrato compartido para los dos casos.
 

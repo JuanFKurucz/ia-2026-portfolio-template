@@ -44,7 +44,10 @@ Reproducí el resultado central y ensayá una variación sin IA.
 
 ## Contrato de un caso defendible
 
-Cada caso usa el dataset, corpus o fixture común indicado en su brief público e incluye objetivo, sistema/datos/modelo/evaluación, resultado probado, evidencia, reproducibilidad, decisiones y límites, uso de IA y contribución. La [plantilla](portfolio/plantilla.md) contiene esas secciones.
+Cada caso usa el dataset, corpus o fixture común indicado en su brief público e incluye objetivo,
+configuración, run o traza, resultado y comparación, evidencia, reproducibilidad, decisión y límite,
+siguiente experimento, uso de IA y contribución. La [plantilla](portfolio/plantilla.md) contiene esas
+secciones.
 
 ## Cómo se evalúa este portafolio
 

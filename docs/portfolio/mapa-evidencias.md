@@ -1,7 +1,8 @@
 ---
-title: "Mapa de casos"
+title: "Mapa de evidencias"
 date: 2026-07-15
-progress_mode: cases
+progress_mode: classes_and_cases
+expected_classes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
 expected_cases: [CASO1, CASO2]
 ---
 
@@ -21,6 +22,8 @@ Estas tablas Markdown son la fuente de verdad. Las prácticas son individuales; 
 El resumen visual aparece con JavaScript. Las tablas siempre conservan el progreso.
 </div>
 
+<div class="ucu-progress-source" data-ucu-progress-source markdown="1">
+
 ## Evidencias individuales
 
 | Clase | Unidad | Evidencia central | Archivo sugerido | Estado |
@@ -39,6 +42,8 @@ El resumen visual aparece con JavaScript. Las tablas siempre conservan el progre
 | 12 | UT4 | Traza de agente correcta y problemática | `portfolio/clase-12.md` | Pendiente |
 | 13 | UT5 | Smoke, release gate y rollback | `portfolio/clase-13.md` | Pendiente |
 | 14 | Evaluación 2 | Reflexión individual de defensa | `portfolio/clase-14.md` | Pendiente |
+
+</div>
 
 ## Casos grupales
 
