@@ -1,0 +1,9 @@
+__pycache__/
+.venv/
+.env
+site/
+site-qa/
+mlruns/
+**/mlruns/
+*.db
+.DS_Store
