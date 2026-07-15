@@ -18,6 +18,7 @@ from urllib.parse import unquote
 
 ALLOWED_STATUSES = ("Pendiente", "Mínimo", "Defendible", "Revisado")
 CLASS_IDENTIFIERS = tuple(str(number) for number in range(1, 17))
+IA_CLASS_IDENTIFIERS = tuple(str(number) for number in range(1, 15))
 UNIT_IDENTIFIERS = tuple(f"UT{number}" for number in range(1, 6))
 CASE_IDENTIFIERS = ("CASO1", "CASO2")
 ESSENTIAL_FILES = (
@@ -141,12 +142,11 @@ def _progress_contract(text: str) -> tuple[tuple[str, ...], str, list[Issue]]:
             for value in _frontmatter_list(frontmatter, "expected_cases")
         )
         issues: list[Issue] = []
-        sequential_classes = tuple(str(number) for number in range(1, len(declared_classes) + 1))
-        if not declared_classes or declared_classes != sequential_classes:
+        if declared_classes != IA_CLASS_IDENTIFIERS:
             issues.append(
                 Issue(
                     "error",
-                    "progress_mode: classes_and_cases requiere expected_classes consecutivas desde 1",
+                    "progress_mode: classes_and_cases requiere expected_classes exactamente del 1 al 14",
                 )
             )
         if declared_cases != CASE_IDENTIFIERS:
@@ -156,7 +156,7 @@ def _progress_contract(text: str) -> tuple[tuple[str, ...], str, list[Issue]]:
                     "progress_mode: classes_and_cases requiere expected_cases: [CASO1, CASO2]",
                 )
             )
-        return declared_classes + CASE_IDENTIFIERS, "clases y casos", issues
+        return IA_CLASS_IDENTIFIERS + CASE_IDENTIFIERS, "clases y casos", issues
     if mode != "units":
         return CLASS_IDENTIFIERS, "clases", [Issue("error", f"progress_mode inválido: {raw_mode!r}")]
 
@@ -227,6 +227,14 @@ def parse_progress_map(path: Path) -> tuple[list[ProgressRow], list[Issue]]:
     duplicates = [identifier for identifier in expected if sum(row.identifier == identifier for row in rows) > 1]
     if duplicates:
         issues.append(Issue("error", f"El mapa repite las {label}: {', '.join(duplicates)}"))
+    unexpected = sorted(found.difference(expected), key=lambda value: (not value.isdigit(), value))
+    if unexpected:
+        issues.append(
+            Issue(
+                "error",
+                f"El mapa contiene identificadores no permitidos para {label}: {', '.join(unexpected)}",
+            )
+        )
     return rows, issues
 
 
