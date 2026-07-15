@@ -21,9 +21,9 @@ Configurá el sitio y ubicá el trabajo compartido con tu pareja.
 <div class="ucu-route-card" markdown="1">
 <span class="ucu-route-card__step">Ruta 02</span>
 
-## [Actualizar los dos casos](portfolio/mapa-evidencias.md)
+## [Actualizar las evidencias](portfolio/mapa-evidencias.md)
 
-Marcá Caso 1 y Caso 2 en Markdown y guardá el progreso en Git.
+Marcá prácticas y casos en Markdown y guardá el progreso en Git.
 </div>
 <div class="ucu-route-card" markdown="1">
 <span class="ucu-route-card__step">Ruta 03</span>
@@ -38,13 +38,13 @@ Reproducí el resultado central y ensayá una variación sin IA.
 
 1. Editá [Acerca de mí](acerca.md) con una presentación breve.
 2. Seguí el [onboarding](onboarding-primera-semana.md).
-3. Confirmá que el [mapa](portfolio/mapa-evidencias.md) contiene los dos casos.
+3. Confirmá que el [mapa](portfolio/mapa-evidencias.md) contiene las 14 clases y los dos casos.
 4. Abrí la [plantilla de caso](portfolio/plantilla.md).
 5. Revisá la [política AI-safe](politica-uso-ia.md).
 
 ## Contrato de un caso defendible
 
-Cada caso usa un dataset, corpus o fixtures no vistos en clase e incluye objetivo, sistema/datos/modelo/evaluación, resultado probado, evidencia, reproducibilidad, decisiones y límites, uso de IA y contribución. La [plantilla](portfolio/plantilla.md) contiene esas secciones.
+Cada caso usa el dataset, corpus o fixture común indicado en su brief público e incluye objetivo, sistema/datos/modelo/evaluación, resultado probado, evidencia, reproducibilidad, decisiones y límites, uso de IA y contribución. La [plantilla](portfolio/plantilla.md) contiene esas secciones.
 
 ## Cómo se evalúa este portafolio
 

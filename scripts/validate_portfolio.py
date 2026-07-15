@@ -30,10 +30,14 @@ ESSENTIAL_FILES = (
     "docs/portfolio/plantilla.md",
 )
 REQUIRED_SECTIONS = {
-    "objetivo": ("## Objetivo",),
+    "objetivo y pregunta": ("## Objetivo", "## Pregunta"),
+    "configuración": ("## Configuración",),
+    "run o traza": ("## Run o traza", "## Run o trace"),
+    "resultado y comparación": ("## Resultado y comparación", "## Resultado probado"),
     "evidencia": ("## Evidencia",),
     "reproducibilidad": ("## Reproducibilidad",),
-    "decisiones y límites": ("## Decisiones y límites", "## Decisión técnica", "## Decisiones"),
+    "decisión y límite": ("## Decisión y límite", "## Decisiones y límites", "## Decisión técnica", "## Decisiones"),
+    "siguiente experimento": ("## Siguiente experimento",),
     "uso de IA": ("## Uso de IA",),
     "microdefensa": ("## Microdefensa",),
 }

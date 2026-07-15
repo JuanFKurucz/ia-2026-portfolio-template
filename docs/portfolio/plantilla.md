@@ -16,7 +16,7 @@ Copiá esta página como `caso-1.md` o `caso-2.md`. La entrada puede ser breve, 
 ## Dataset, corpus o fixtures
 
 - Fuente, licencia o permiso de uso.
-- Confirmación de que no se trabajó en clase.
+- Versión y checksum del dataset/corpus común indicado en el brief, o autorización explícita para usar otro.
 - Calidad, sesgo, privacidad o limitación relevante.
 
 ## Sistema, datos, modelo y evaluación
@@ -25,7 +25,15 @@ Copiá esta página como `caso-1.md` o `caso-2.md`. La entrada puede ser breve, 
 - Técnica de la unidad y baseline, control o alternativa.
 - Métrica, prueba o criterio de evaluación.
 
-## Resultado probado
+## Configuración
+
+Registrá datos y split, baseline, candidato, parámetros relevantes, versión del entorno y presupuesto de cómputo.
+
+## Run o traza
+
+Incluí el identificador o exportación local equivalente. Para agentes, conservá entrada/salida, pasos, llamadas a herramientas, latencia/tokens y un error o denegación.
+
+## Resultado y comparación
 
 Explicá qué ocurrió y sostenelo con una métrica, prueba, comparación, tabla, gráfico, log, traza o caso de falla. Aclará qué permite afirmar y qué no.
 
@@ -33,7 +41,7 @@ Explicá qué ocurrió y sostenelo con una métrica, prueba, comparación, tabla
 
 Incluí entre una y tres evidencias concretas: artefacto compartido, notebook, script, commit, tabla, visualización o log. Señalá cuál debería inspeccionarse primero.
 
-- **Run o trace:** identificador de MLflow o LangSmith, cuando corresponda.
+- **Run o trace:** identificador de MLflow, LangSmith o exportación local equivalente, cuando corresponda.
 - **Export:** `runs.csv` o `runs.json`; no publiques el directorio `mlruns/`.
 - **Comparación:** baseline o referencia, candidato y criterio de selección.
 - **Release:** smoke test y rollback para el Caso 2.
@@ -42,12 +50,16 @@ Incluí entre una y tres evidencias concretas: artefacto compartido, notebook, s
 
 Indicá el entorno y la forma mínima de abrir, ejecutar o inspeccionar el resultado. Si depende de credenciales, hardware o un servicio externo, dejá una alternativa local, congelada o simulada.
 
-## Decisiones y límites
+## Decisión y límite
 
 - **Decisión técnica:** qué eligieron y por qué.
 - **Alternativa descartada:** qué no hicieron y por qué.
 - **Límite o riesgo:** dónde podría fallar o inducir una conclusión incorrecta.
 - **Próxima prueba:** qué evidencia cambiaría o reforzaría la decisión.
+
+## Siguiente experimento
+
+Definí una sola variación y el resultado que confirmaría o refutaría la hipótesis actual.
 
 ## Uso de IA
 
