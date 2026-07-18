@@ -22,6 +22,7 @@
   --ucu-line: #d7d0c5;
   --ucu-accent: #0b6e69;
   --ucu-accent-strong: #07534f;
+  --ucu-accent-readable: var(--ucu-accent-strong);
   --ucu-accent-soft: #d8eeea;
   --ucu-highlight: #b46b12;
   --ucu-highlight-soft: #f7e5c9;
@@ -47,6 +48,7 @@
   --ucu-paper-raised: #18252f;
   --ucu-muted: #b7c5cf;
   --ucu-line: #344652;
+  --ucu-accent-readable: #8de0d5;
   --ucu-accent-soft: #153d3b;
   --ucu-highlight-soft: #4b3215;
   --ucu-shadow: 0 1.25rem 3rem rgb(0 0 0 / 25%);
@@ -312,8 +314,7 @@ input {
 }
 
 .ucu-practice-brief__deliverables {
-  border-top: 1px solid var(--ucu-line);
-  padding-top: 0.85rem;
+  padding-top: 0.65rem;
 }
 
 .ucu-practice-brief__deliverables h3 {
@@ -324,6 +325,58 @@ input {
 
 .ucu-practice-brief__portfolio {
   margin-bottom: 0;
+}
+
+.ucu-practice-brief__details {
+  border-top: 1px solid var(--ucu-line);
+  padding-top: 0.7rem;
+}
+
+.ucu-practice-brief__details summary {
+  color: var(--ucu-accent-readable);
+  cursor: pointer;
+  font-weight: 750;
+}
+
+.ucu-practice-brief__details summary:focus-visible {
+  border-radius: 0.2rem;
+  outline: 0.18rem solid var(--ucu-focus);
+  outline-offset: 0.2rem;
+}
+
+@media screen and (max-width: 44.984375rem) {
+  .ucu-practice-brief {
+    margin-bottom: 1rem;
+    padding: 0.75rem 0.85rem;
+  }
+
+  .ucu-practice-brief__eyebrow {
+    font-size: 0.62rem;
+    margin-bottom: 0.15rem;
+  }
+
+  .ucu-practice-brief__title {
+    font-size: 1.05rem;
+  }
+
+  .ucu-practice-brief__facts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    margin: 0.6rem 0;
+  }
+
+  .ucu-practice-brief__facts div {
+    padding: 0.3rem 0.45rem;
+  }
+
+  .ucu-practice-brief dt {
+    font-size: 0.58rem;
+  }
+
+  .ucu-practice-brief dd {
+    font-size: 0.78rem;
+  }
 }
 
 .ucu-badge,

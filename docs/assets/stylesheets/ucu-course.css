@@ -7,6 +7,7 @@
 }
 
 [data-md-color-scheme="slate"] {
+  --ucu-accent-readable: #a9c6ff;
   --ucu-accent-soft: #1b3154;
   --ucu-highlight-soft: #4b2924;
 }

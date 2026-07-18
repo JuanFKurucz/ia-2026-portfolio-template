@@ -17,17 +17,24 @@ Las defensas de las clases 7 y 14 validan autoría individual de los casos y hab
 
 1. Abrí `docs/index.md` y seguí el onboarding.
 2. Editá `docs/acerca.md` con una presentación breve.
-3. Confirmá que `docs/portfolio/mapa-evidencias.md` contiene Caso 1 y Caso 2.
+3. Confirmá que `docs/portfolio/mapa-evidencias.md` contiene las 14 evidencias individuales y los dos casos.
 4. Revisá `docs/politica-uso-ia.md`.
 5. Probá el sitio localmente antes de entregar el link.
 
 ## Cómo crear un caso defendible
 
 1. Copiá `docs/portfolio/plantilla.md` como `docs/portfolio/caso-1.md` o `caso-2.md`.
-2. Usá un dataset, corpus o conjunto de fixtures que no se haya trabajado en clase.
+2. Usá el dataset, corpus o fixture común indicado en el brief público del caso; una fuente distinta sólo corresponde si la consigna la autoriza.
 3. Incluí objetivo, resultado probado, evidencia, reproducibilidad, decisiones, límites, uso de IA y contribución.
-4. Enlazá el artefacto técnico compartido con tu pareja; no dupliques el informe.
+4. Enlazá el artefacto técnico compartido con tu equipo de 2–3; no dupliques el informe.
 5. Entregá en WebAsignatura solo el enlace o archivo pedido.
+
+## Cómo crear una evidencia individual
+
+1. Copiá `docs/portfolio/plantilla-evidencia.md` con el nombre indicado en el mapa.
+2. Respondé el único ejercicio `Para casa` de la clase y conservá una comprobación localizable.
+3. Registrá configuración, resultado comparado, decisión, límite y una sola siguiente prueba.
+4. Cambiá el estado únicamente cuando la entrada exista y puedas inspeccionarla.
 
 ## Ejecutar localmente
 

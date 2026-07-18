@@ -12,6 +12,20 @@ date: 2026-06-27
 - **Resultado visible:** sitio local o publicado, primera página editada y captura si GitHub Pages todavía no publica.
 - **Estado:** ruta mínima de arranque.
 
+## Configuración
+
+- Plantilla IA 2026 sobre rama `main`.
+- Entorno local y versión de Python usados para el build.
+- Commit que contiene esta primera entrada.
+
+## Run o traza
+
+No aplica MLflow ni LangSmith. Registrá el SHA del commit y la salida de `mkdocs build --strict` o del workflow de calidad.
+
+## Resultado y comparación
+
+Compará el contrato esperado —build correcto y portada, mapa y entrada accesibles— con lo observado. Si falla, conservá el mensaje y la página afectada.
+
 ## Evidencia
 
 - Link al sitio publicado o captura local guardada en `docs/assets/`.
@@ -34,6 +48,10 @@ Si el comando falla, registrá el mensaje de error y qué probaste para resolver
 - **Alternativa descartada:** entregar evidencia suelta sin contexto.
 - **Límite:** publicación pendiente si GitHub Pages todavía no está activo.
 - **Riesgo:** subir por error tokens, datasets privados o material de compañeros.
+
+## Siguiente experimento
+
+Abrí la URL publicada en una ventana privada y comprobá portada, mapa y esta entrada. Si Pages no está disponible, repetí el build desde un checkout limpio.
 
 ## Uso de IA
 

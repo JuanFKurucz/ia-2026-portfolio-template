@@ -1,32 +1,58 @@
 ---
-title: "Mapa de casos"
+title: "Mapa de evidencias"
 date: 2026-07-15
-progress_mode: cases
+progress_mode: classes_and_cases
+expected_classes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
 expected_cases: [CASO1, CASO2]
 ---
 
-# Mapa de casos del portafolio
+# Mapa de evidencias del portafolio
 
-Esta tabla Markdown es la fuente de verdad. Los casos se construyen en equipos de 2–3; el estado y la capacidad de defenderlos son personales.
+Estas tablas Markdown son la fuente de verdad. Las prácticas son individuales; los casos se construyen en equipos de 2–3, pero el estado y la capacidad de defenderlos son personales.
 
 ## Cómo usar este mapa
 
-1. Copiá [plantilla.md](plantilla.md) al iniciar cada caso.
-2. Enlazá el artefacto compartido y declará tu contribución.
+1. Copiá [plantilla-evidencia.md](plantilla-evidencia.md) después del único ejercicio `Para casa` de cada clase.
+2. Copiá [plantilla.md](plantilla.md) al iniciar cada caso.
 3. Usá sólo `Pendiente`, `Mínimo`, `Defendible` o `Revisado`.
 4. Entregá en WebAsignatura únicamente lo solicitado.
 5. No publiques respuestas A0, secretos, feedback ni datos privados.
 
 <div class="ucu-progress-dashboard" data-ucu-progress-dashboard>
-El resumen visual aparece con JavaScript. Esta tabla siempre conserva el progreso.
+El resumen visual aparece con JavaScript. Las tablas siempre conservan el progreso.
 </div>
+
+<div class="ucu-progress-source" data-ucu-progress-source markdown="1">
+
+## Evidencias individuales
+
+| Clase | Unidad | Evidencia central | Archivo sugerido | Estado |
+|---:|---|---|---|---|
+| 1 | Introducción | EDA manual, preguntas y límite | `portfolio/01-primera-entrada.md` | Pendiente |
+| 2 | UT1 | Baseline y primer run MLflow | `portfolio/clase-02.md` | Pendiente |
+| 3 | UT1 | Comparación de regresión/clasificación | `portfolio/clase-03.md` | Pendiente |
+| 4 | UT1 | Clustering/PCA y decisión de pertinencia | `portfolio/clase-04.md` | Pendiente |
+| 5 | UT2 | Primer entrenamiento y curva | `portfolio/clase-05.md` | Pendiente |
+| 6 | UT2 | Selección contra overfitting | `portfolio/clase-06.md` | Pendiente |
+| 7 | Evaluación 1 | Reflexión individual de defensa | `portfolio/clase-07.md` | Pendiente |
+| 8 | UT3 | CNN, transfer y augmentation | `portfolio/clase-08.md` | Pendiente |
+| 9 | UT3 | Error visual, IoU/Dice o explicabilidad | `portfolio/clase-09.md` | Pendiente |
+| 10 | UT4 | Búsqueda semántica evaluada | `portfolio/clase-10.md` | Pendiente |
+| 11 | UT4 | RAG, grounding y abstención | `portfolio/clase-11.md` | Pendiente |
+| 12 | UT4 | Traza de agente correcta y problemática | `portfolio/clase-12.md` | Pendiente |
+| 13 | UT5 | Smoke, release gate y rollback | `portfolio/clase-13.md` | Pendiente |
+| 14 | Evaluación 2 | Reflexión individual de defensa | `portfolio/clase-14.md` | Pendiente |
+
+</div>
+
+## Casos grupales
 
 <div class="ucu-progress-source" data-ucu-progress-source markdown="1">
 
 | Caso | Bloque | Evidencia central | Archivo sugerido | Estado |
 |---|---|---|---|---|
 | CASO1 | UT1–UT2 · ML clásico | Baseline, runs MLflow, comparación, errores, decisión y límite | `portfolio/caso-1.md` | Pendiente |
-| CASO2 | UT3–UT5 · NLP, agentes y despliegue | Runs MLflow, traza LangSmith, smoke test, release y rollback | `portfolio/caso-2.md` | Pendiente |
+| CASO2 | UT3–UT5 · NLP, agentes y despliegue | Runs MLflow, traza LangSmith o local, smoke test, release y rollback | `portfolio/caso-2.md` | Pendiente |
 
 </div>
 

@@ -11,7 +11,7 @@ Los casos valen **20%** y el portafolio individual **20%**. Las defensas comprue
 
 - Clase 7: Caso 1 de ML clásico.
 - Clase 14: Caso 2 de NLP, agentes y despliegue.
-- Cada pareja dispone de 5 minutos y responde una pregunta o variación A0.
+- Cada equipo de 2–3 dispone de 5 minutos y cada integrante responde una pregunta o variación A0.
 - Si se activan dos paneles, WebAsignatura informa panel y orden; los criterios son los mismos.
 
 ## Qué tenés que poder demostrar
