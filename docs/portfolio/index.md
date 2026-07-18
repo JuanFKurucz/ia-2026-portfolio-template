@@ -14,6 +14,8 @@ Esta sección reúne catorce evidencias individuales y dos casos grupales. Las e
 3. Explicá resultado comparado, decisión, límite y siguiente prueba.
 4. Marcá el estado cuando el archivo exista y puedas defenderlo.
 
+El progreso no se mide por extensión. Pasá a `Mínimo` cuando exista una comparación inspeccionable, a `Defendible` cuando puedas sostenerla sin IA y a `Revisado` únicamente después de registrar una devolución, un cambio comprobado y el límite que permanece.
+
 ## Archivos del semestre
 
 - `portfolio/caso-1.md`: ML clásico con baseline, modelos candidatos y MLflow.

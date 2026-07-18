@@ -21,7 +21,7 @@ Los casos valen **20%** y el portafolio individual **20%**. Las defensas comprue
 - La conclusión está sostenida por evidencia observable.
 - Los errores y límites están interpretados.
 - El resultado puede inspeccionarse y el uso de IA es transparente.
-- Ambos integrantes pueden explicar su aporte y responder una variación.
+- Cada integrante puede explicar su aporte y responder una variación.
 
 ## Antes de entrar
 

@@ -1,71 +1,42 @@
 ---
 title: "Plantilla de entrega AI-safe"
-date: 2026-06-25
+date: 2026-07-17
 ---
 
 # Plantilla de entrega AI-safe
 
-<!-- BEGIN PORTFOLIO-EVIDENCE-ROUTING -->
-## 0. Qué copiar a tu portafolio
+## Qué va en cada lugar
 
-- Copiá: objetivo, evidencia principal, resultado, límite, declaración de IA y cómo reproducir.
-- No copies: respuestas A0 completas, datos privados, claves, feedback docente privado ni registros de compañeros.
-- En WebAsignatura: entregá solo el link o archivo pedido por la consigna.
-- Para el docente: checkpoint A0, microdefensa y registros privados pueden quedar en el registro docente aunque no estén públicos.
-<!-- END PORTFOLIO-EVIDENCE-ROUTING -->
+- **Portafolio público:** objetivo, evidencia principal, resultado, límite, uso de IA y reproducción.
+- **WebAsignatura:** únicamente el enlace o archivo pedido por la consigna.
+- **Registro docente privado:** respuestas A0, feedback, notas, holdouts y controles que no deban publicarse.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+No publiques datos privados, claves, feedback docente textual ni registros de otras personas.
 
 ## Declaración de IA
 
-- Herramientas usadas:
-- Nivel A0-A4:
-- Partes asistidas:
-- Decisiones propias:
-- Validaciones:
+- **Herramienta y nivel A0–A4:**
+- **Propósito:**
+- **Salida aceptada, modificada o rechazada:**
+- **Verificación humana:**
+- **Datos que no compartiste:**
 
-## Bitácora
-
-| Interacción | Propósito | Resultado | Decisión humana |
-|---|---|---|---|
-| 1 | Ejemplo: mejorar una explicación del portafolio | La IA sugirió una estructura | Reescribí con mi evidencia y verifiqué que no inventara resultados |
-| 2 | `<para qué usaste IA>` | `<qué obtuviste>` | `<qué aceptaste, rechazaste o cambiaste>` |
-| 3 | `<para qué usaste IA>` | `<qué obtuviste>` | `<cómo lo verificaste manualmente>` |
+Una bitácora extensa solo aporta valor si una interacción cambió una decisión. En ese caso, registrá propósito, resultado y decisión humana en una fila breve.
 
 ## Reproducibilidad
 
-- Entorno:
-- Datos:
-- Pasos de ejecución:
-- Evidencia:
-- Confirmación: no hay secretos ni datos privados.
+- **Entorno y datos permitidos:**
+- **Comando o ruta mínima:**
+- **Evidencia que confirma el resultado:**
+- **Fallback si falta un servicio o credencial:**
 
-## Defensa
+## Microdefensa
 
-- ¿Qué decisión técnica defendés?
-- ¿Qué error encontraste?
-- ¿Qué cambiarías con más tiempo?
-- ¿Qué podés explicar sin IA?
+- ¿Qué decisión técnica fue propia?
+- ¿Qué evidencia sostiene el resultado?
+- ¿Qué error o límite permanece?
+- ¿Qué cambiaría con otro dato, métrica o requisito?
 
-## Defensa del portafolio
+## Si la evidencia fue revisada
 
-- Evidencia que vas a defender:
-- Variación que podrías responder sin IA:
-- Riesgo o límite principal:
+Parafraseá la devolución útil, describí el cambio, enlazá la comprobación y conservá el límite restante. La mejora debe verse en la evidencia o en el historial de commits; no alcanza con cambiar el estado del mapa.

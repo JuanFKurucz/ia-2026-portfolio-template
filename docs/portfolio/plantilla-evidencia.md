@@ -51,3 +51,12 @@ Registrá nivel A0–A4, propósito, salida aceptada o rechazada, verificación 
 ## Microdefensa
 
 En 3–5 líneas, explicá la evidencia central, la decisión propia y qué cambiaría si varía el dato, la métrica o el requisito.
+
+## Revisión
+
+Completá esta sección solo cuando cambies la fila a `Revisado`. Parafraseá la devolución útil; no publiques comentarios docentes privados ni datos de otras personas.
+
+- **Devolución interpretada:** [Completar] Qué observación cambió tu lectura del trabajo.
+- **Cambio realizado:** [Completar] Qué modificaste respecto de la versión anterior.
+- **Comprobación:** [Completar] Qué prueba, comparación o artefacto demuestra la mejora.
+- **Límite restante:** [Completar] Qué sigue sin resolverse o no puede afirmarse todavía.

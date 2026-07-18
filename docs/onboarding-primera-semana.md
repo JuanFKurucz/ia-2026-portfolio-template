@@ -29,6 +29,8 @@ Esta guía corresponde a tu repositorio editable. El sitio de tareas se lee; ac�
 3. Conservá configuración, run o comprobación, resultado comparado, decisión y límite.
 4. Marcá el estado mediante un commit cuando la entrada exista y pase el validador.
 
+Para usar `Revisado`, agregá a la entrada la devolución interpretada, el cambio realizado, la comprobación y el límite restante. Parafraseá el feedback útil: no copies comentarios privados al sitio público.
+
 ## Flujo por bloque
 
 1. Acordá con tu equipo de 2–3 una pregunta sobre el dataset o corpus común indicado en el brief del caso.

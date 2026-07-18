@@ -61,7 +61,7 @@ El resumen visual aparece con JavaScript. Las tablas siempre conservan el progre
 - `Pendiente`: todavía no existe un resultado verificable.
 - `Mínimo`: existe artefacto, resultado y forma de inspeccionarlo.
 - `Defendible`: podés explicar contribución, decisiones, límites y uso de IA.
-- `Revisado`: incorporaste una devolución o mejora comprobada.
+- `Revisado`: incorporaste una devolución, registraste el cambio y comprobaste su efecto. No alcanza con cambiar la etiqueta.
 
 ## Contrato de evidencia
 

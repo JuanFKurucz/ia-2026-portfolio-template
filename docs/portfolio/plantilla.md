@@ -76,7 +76,16 @@ Enlazá el artefacto único del equipo de 2–3 y describí brevemente tu contri
 
 ## Microdefensa
 
-Prepará una explicación breve del resultado y una respuesta a una variación de dato, métrica o requisito. Ambos integrantes deben poder justificar el baseline, la evidencia y el límite sin IA.
+Prepará una explicación breve del resultado y una respuesta a una variación de dato, métrica o requisito. Cada integrante debe poder justificar su aporte, el baseline, la evidencia y el límite sin IA.
+
+## Revisión
+
+Completá esta sección solo cuando cambies la fila a `Revisado`. Parafraseá la devolución útil; no publiques comentarios docentes privados ni datos de otras personas.
+
+- **Devolución interpretada:** [Completar] Qué observación cambió la lectura del caso.
+- **Cambio realizado:** [Completar] Qué modificó el equipo respecto de la versión anterior.
+- **Comprobación:** [Completar] Qué prueba, comparación o artefacto demuestra la mejora.
+- **Límite restante:** [Completar] Qué sigue sin resolverse o no puede afirmarse todavía.
 
 ## Referencias
 
